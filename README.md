@@ -1,4 +1,4 @@
-# 说明
+# 1. 说明
 
 基于 https://github.com/PanJiaChen/vue-admin-template release 4.4.0 版本修改：
 
@@ -16,58 +16,86 @@
 keep-alive 功能会失效，即每次点击已打开的 tag 都会触发刷新**
 
 
-# 模板
+# 2. 模板
 https://github.com/leffss/vue-admin-template-4.4.0-tagsview
 
-# 权限 
+# 3. 权限 
 https://blog.csdn.net/SKY_PLA/article/details/122301579
 
-# vue中表格或者内容区域高度自适应 
+# 4. vue中表格或者内容区域高度自适应 
 https://blog.csdn.net/weixin_47180815/article/details/121351516
 
-# vue-admin-template 后台管理之权限管理，动态路由的实现
+# 5. vue-admin-template 后台管理之权限管理，动态路由的实现
 https://blog.csdn.net/weixin_43638800/article/details/109641584
+
 https://juejin.cn/post/7047528276683653127
 
-# 前端控制路由权限     node 12.20.0
+# 6. 前端控制路由权限     node 12.20.0
++ 主页
 
++ 结算 Settlement
+	+ 门店收入结算  StoreIncomeSettlement
 
+	+ 面料商结算 FabricSupplierSettlement
 
-主页
-结算 Settlement
-	门店收入结算  StoreIncomeSettlement
-	面料商结算 FabricSupplierSettlement
-	工厂结算 FactorySettlement
-客户管理	 CustomerManagement
-供应链 SupplyChain
-	面料商 FabricSupplier
-	工厂 Factory
-面料管理	FabricManagement
-	品牌管理 BrandManagement
-	面料管理 FabricManagement
+	+ 工厂结算 FactorySettlement
 
-成品管理 FinishedProductManagement
-定制产品  CustomizedProducts
-	订单管理 OrderManagement
-	佣金管理 CommissionManagement
-	定制产品 CustomizedProducts
-	定价体系 PricingSystem
-	特体参数 SpecialParameters
-小程序 MiniProgram
-	广告管理 AdvertisementManagement
-	内容管理 ContentManagement
-	活动管理 EventManagement
-账号 Account
-	门店管理 StoreManagement
-	账号管理 AccountManagement
-支付方式管理 PaymentMethodManagement
-数据中心 DataCenter
-系统中心 SystemCenter
++ 客户管理	 CustomerManagement
 
-# 图表
-npm install echarts --save   https://blog.csdn.net/weixin_43180359/article/details/103972649
++ 供应链 SupplyChain
 
-# 控制台：event.js:94 [Violation] Added non-passive event listener to a scroll-blocking 'mousewheel' event. Consider marking event handler as 'passive' to make the page more responsive.
+	+ 面料商 FabricSupplier
+
+	+ 工厂 Factory
+
++ 面料管理	FabricManagement
+
+	+ 品牌管理 BrandManagement
+
+	+ 面料管理 FabricManagement
+
++ 成品管理 FinishedProductManagement
+
++ 定制产品  CustomizedProducts
+
+	+ 订单管理 OrderManagement
+
+	+ 佣金管理 CommissionManagement
+
+	+ 定制产品 CustomizedProducts
+
+	+ 定价体系 PricingSystem
+
+	+ 特体参数 SpecialParameters
+
++ 小程序 MiniProgram
+
+	+ 广告管理 AdvertisementManagement
+
+	+ 内容管理 ContentManagement
+
+	+ 活动管理 EventManagement
+
++ 账号 Account
+
+	+ 门店管理 StoreManagement
+
+	+ 账号管理 AccountManagement
+
++ 支付方式管理 PaymentMethodManagement
+
++ 数据中心 DataCenter
+
++ 系统中心 SystemCenter
+
+# 7. 图表
+npm install echarts --save   
+
+https://blog.csdn.net/weixin_43180359/article/details/103972649
+
+# 8. 控制台报错处理
+
+event.js:94 [Violation] Added non-passive event listener to a scroll-blocking 'mousewheel' event. Consider marking event handler as 'passive' to make the page more responsive.
 
 违反：没有添加被动事件监听器来阻止’touchstart’事件，请考虑添加事件管理者’passive’，以使页面更加流畅。
 原因：Chrome51 版本以后，Chrome 增加了新的事件捕获机制－Passive Event Listeners；
@@ -75,11 +103,14 @@ Passive Event Listeners：就是告诉前页面内的事件监听器内部是否
 解决办法：npm i default-passive-events -S
 main.js 中加入 import 'default-passive-events'
 
-# Lodash
+# 9. Lodash
 https://juejin.cn/post/7220274775913496613
+
 npm install --save lodash
 
+```vue
 import debounce from 'lodash/debounce';
+
 import throttle from 'lodash/throttle';
 
 window.addEventListener('scroll', debounce(this.handleScroll, 200));
@@ -101,17 +132,18 @@ destroyed() {
 	window.removeEventListener('scroll', debounce(this.handleScroll, 200));
 	window.removeEventListener('resize', throttle(this.handleResize, 500));
 }
+```
 
-# 完美监听一个div尺寸的改变(不论何种方式导致的尺寸变化)
-https://www.jqhtml.com/63614.html
+# 10. 完美监听一个div尺寸的改变(不论何种方式导致的尺寸变化)
+ https://www.jqhtml.com/63614.html
 
-# 解决fixed 固定列错位bug
-this.$refs.tableDataRef.doLayout();
-
-
+# 11. 解决fixed 固定列错位bug
+ this.$refs.tableDataRef.doLayout();
 
 
-# 正则验证
+
+
+# 12. 正则验证
 只能输入数字和小数点，最多两位小数
 oninput="this.value = this.value.replace(/^\D*(\d*(?:\.\d{0,2})?).*$/g,'$1')"
 
@@ -137,14 +169,15 @@ const chineseReg = /^[\u4e00-\u9fa5]+$/;
 非空字符正则表达式：用于验证字符串是否为空或只包含空格。
 const notEmptyReg = /\S+/;
 
-# vue-element-admin、跳转详情页，添加面包屑，侧边栏不显示
+# 13. vue-element-admin、跳转详情页，添加面包屑，侧边栏不显示
 修改 Breadcrumb / index
 https://www.bilibili.com/read/cv22075416
 
-# 富文本
+# 14. 富文本
 https://blog.csdn.net/jia2799897415/article/details/125788747 
 
-# 表单验证
+# 15. 表单验证
+```js
 brand: [
 	{ required: true, message: '请选择品牌', trigger: 'change' }
 ],
@@ -158,9 +191,11 @@ fabricNo: [
 costPrice: [
 	{ required: true, message: '请输入成本价', trigger: 'blur' },
 ]
+```
 
 
-# 文字内容超过宽度显示...
+# 16. 文字内容超过宽度显示...
+```css
 //一行
 white-space: nowrap;
 text-overflow: ellipsis;
@@ -174,18 +209,22 @@ display: -webkit-box;
 -webkit-line-clamp: 2;
 line-clamp: 2;
 -webkit-box-orient: vertical;
+```
 
-# 数字字母强制换行
+# 17. 数字字母强制换行
 word-wrap: break-word
 
-# 关闭当前标签
+# 18. 关闭当前标签
 // 调用全局挂载的方法，关闭当前页
 this.$store.dispatch("tagsView/delView", this.$route);
 // 关闭之后跳转你要跳转的路由
 this.$router.push({ path: '/FinishedProductManagement/FinishedProductManage' })
 
 
-# 拖拽 SortableJS npm install sortablejs --save
+# 19. 拖拽 
+```js
+SortableJS npm install sortablejs --save
+
 https://blog.csdn.net/XH_jing/article/details/120265576
 
 row-key="id"
@@ -225,8 +264,10 @@ setSort() {
   cursor: move;
 }
 </style>
+```
 
 
-# 打印 
+# 20. 打印 
 	npm i vue-print-nb --save
+
 	https://blog.csdn.net/qq_37494968/article/details/130931757
