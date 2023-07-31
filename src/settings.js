@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: '小程序后台',
+  title: '小程序后台管理系统',
 
   /**
    * @type {boolean} true | false

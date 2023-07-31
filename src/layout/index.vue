@@ -11,7 +11,7 @@
       <app-main />
 
       <div class="footer_copy_wrap">
-        <p>Copyright &copy;2023 小程序后台</p>
+        <p>Copyright &copy;2023 小程序后台管理系统</p>
       </div>
 
     </div>

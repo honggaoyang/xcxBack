@@ -1,7 +1,7 @@
 {
   "name": "mx_website_backend",
   "version": "4.4.0",
-  "description": "小程序后台",
+  "description": "小程序后台管理系统",
   "author": "hhy",
   "scripts": {
     "dev": "vue-cli-service serve",
